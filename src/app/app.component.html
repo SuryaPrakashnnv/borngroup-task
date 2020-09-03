@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="alert alert-primary" role="alert">
+        <h2>Pending Tasks</h2>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary" *ngFor="let pTask of pendingTasks; let i = index" (click)="doInProgress(i)">{{pTask}}</li>
+      </ul>
+      <h4 *ngIf="pendingTasks.length < 1">We have no Pending Tasks!</h4>
+      <hr>
+      <h2>InProgress Tasks</h2>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action list-group-item-warning" *ngFor="let iTask of inProgressTasks; let i = index" (click)="doCompleted(i)">{{iTask}}</li>
+      </ul>
+      <h4 *ngIf="inProgressTasks.length < 1">We have no InProgress Tasks!</h4>
+      <hr>
+      <h2>Completed Tasks</h2>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action list-group-item-success" *ngFor="let cTask of completedTasks; let i = index">{{cTask}}</li>
+      </ul>
+      <h4 *ngIf="completedTasks.length < 1">We have no Completed Tasks!</h4>
+      <h4 *ngIf="completedTasks.length == 5">All Tasks are Completed!</h4>
+     
+    </div>
+  </div>
+</div>
